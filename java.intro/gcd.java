@@ -12,7 +12,7 @@
 //import java.lang.Math;
 import java.util.*;
 
-public class Light {
+public class gcd {
     static Scanner reader = new Scanner(System.in);
     public static void main(String args[]){
         int a, b;
