@@ -12,12 +12,9 @@
 import java.util.*;
 
 public class Rot13 {
-    public static void main(String args[]){
-        Scanner reader = new Scanner(System.in);
-        String s;
+    public static char [] convert(char [] str)
+    {
         int temp;
-        s=reader.nextLine();
-        char [] str = s.toCharArray ();
         for (int i = 0; i<str.length; i++)
         {
             if ((str[i] >= 'A')&&(str[i] <= 'Z'))
@@ -27,7 +24,19 @@ public class Rot13 {
             else temp=str[i];
             str[i]=(char)temp;
         }
-        System.out.println(str);
-
+        return str;
+    }
+    public static void main(String args[]){
+        Scanner reader = new Scanner(System.in);
+        String s;
+        System.out.println("Enter a string:");
+        s=reader.nextLine();
+        char [] str = s.toCharArray ();
+        char [] result = convert(str);
+        System.out.println("=> (rot13)");
+        System.out.println(result);
+        result = convert(result);
+        System.out.println("=> (rot13)");
+        System.out.println(result);
     }
 }
