@@ -9,17 +9,11 @@
  * @author Polina
  */
 
-//import java.lang.Math;
+import java.lang.Math;
 import java.util.*;
 
 public class gcd {
-    static Scanner reader = new Scanner(System.in);
-    public static void main(String args[]){
-        int a, b;
-        System.out.print("a = ");
-        a=Math.abs(reader.nextInt());
-        System.out.print("b = ");
-        b=Math.abs(reader.nextInt());
+    public static int GetGcdMod(int a, int b){
         while(b!=0){
             a=a%b;
             int temp;
@@ -27,7 +21,34 @@ public class gcd {
             a=b;
             b=temp;        
         }
-        System.out.print("gcd = ");
-        System.out.println(a);
+        if (a<0 || b<0) return (-a);
+        else return a;
+    }
+    public static int GetGcdFloorMod(int a, int b){
+        while(b!=0){
+            a = Math.floorMod(a,b);
+            int temp;
+            temp=a;
+            a=b;
+            b=temp;        
+        }
+        if (a<0) return (-a);
+        else return a;
+    }
+    static Scanner reader = new Scanner(System.in);
+    public static void main(String args[]){
+        int a, b;
+        System.out.print("a = ");
+        a = reader.nextInt();
+        System.out.print("b = ");
+        b = reader.nextInt();
+        
+        int result = GetGcdMod(a,b);
+        System.out.print("gcd (%) = ");
+        System.out.println(result);
+        
+        result = GetGcdFloorMod(a,b);
+        System.out.print("gcd (FloorMod) = ");
+        System.out.println(result);
     }
 }
