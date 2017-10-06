@@ -35,6 +35,17 @@ public class gcd {
         if (a<0) return (-a);
         else return a;
     }
+    public static int GetGcdRem(int a, int b){
+        while(b!=0){
+            a = (int) Math.IEEEremainder(a,b);
+            int temp;
+            temp=a;
+            a=b;
+            b=temp;        
+        }
+        if (a<0 || b<0) return (-a);
+        else return a;
+    }
     static Scanner reader = new Scanner(System.in);
     public static void main(String args[]){
         int a, b;
@@ -49,6 +60,10 @@ public class gcd {
         
         result = GetGcdFloorMod(a,b);
         System.out.print("gcd (FloorMod) = ");
+        System.out.println(result);
+        
+        result = GetGcdRem(a,b);
+        System.out.print("gcd (rem) = ");
         System.out.println(result);
     }
 }
