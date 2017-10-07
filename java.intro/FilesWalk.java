@@ -30,16 +30,19 @@ import java.util.stream.Collectors;
 
 
 public class FilesWalk {
+    //функция проверки на наличие ключевых слов
     public static boolean match (String dir, String [] keywords) {
         Boolean firstKey=false, secondKey=false;
         try{
             Scanner s = new Scanner(new File(dir));
-
+            //считываем строки в файле
             while(s.hasNextLine()){
             String nextLine = s.nextLine();
+            //проверяем первое ключевое слово
             if(nextLine.contains(keywords[0])){
                 firstKey=true;
             }
+            //проверяем второе ключевое слово
             if(nextLine.contains(keywords[1])){
                 secondKey=true;
             }
@@ -54,14 +57,14 @@ public class FilesWalk {
         return false;
     }
     public static void main(String[] args) throws IOException, FileNotFoundException{
-        Path pathToRoot = Paths.get("zipsrc/java");
-        int maxDepth = 10;
-        String [] keywords = {"transient", "volatile"};
+        Path pathToRoot = Paths.get("zipsrc/java"); //путь к корню дерева поиска
+        int maxDepth = 10;//максимальная глубина спуска в дереве
+        String [] keywords = {"transient", "volatile"};//ключевые слова
         try (Stream<Path> stream = Files.walk(pathToRoot, maxDepth)){
-            String dirList = stream
+            String dirList = stream //записываем пути к нужным файлам
                 .map(String::valueOf)
-                .filter(path -> match(path, keywords))
-                .collect(Collectors.joining("\n"));
+                .filter(path -> match(path, keywords)) //проверка наличия ключевых слов
+                .collect(Collectors.joining("\n")); //конкатенация путей
             System.out.println(dirList);
         }
     }
