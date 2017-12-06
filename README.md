@@ -9,11 +9,11 @@ mathematical (non-negative) remainder. Which of the three gives you the least ha
 with negative values?
 - [x] 2. Implement a bidirectional Rot13 algorithm. Encode/decode a string from
 the command line argument.
-- [x] 3. Write a program to convert an input hexadecimal string into its equivalent
+- [ ] 3. Write a program to convert an input hexadecimal string into its equivalent
 decimal number.
-- [ ] 4. Write methods that turn a Scanner into a stream of words, lines, integers, or
+- [x] 4. Write methods that turn a Scanner into a stream of words, lines, integers, or
 double values.
-- [ ] 5. Unzip the src.zip file from the JDK. Using Files.walk, find all Java files that
+- [x] 5. Unzip the src.zip file from the JDK. Using Files.walk, find all Java files that
 contain the keywords transient and volatile.
 - [x] 6. Write an example that counts the number of times a particular character,
 such as E, appears in a file. The character can be specified at the command line.
@@ -30,6 +30,9 @@ such a generator, you start with x0 = seed and then produce xn + 1 = (a xn + c) 
 for appropriate values of a, c, and m. You should implement a method with
 parameters a, c, m, and seed that yields a Stream. Try out a = 25214903917, c = 11,
 and m = 2^48.
-- [ ] 9. Write a method public static Stream zip(Stream first, Stream second) that
+- [x] 9. Write a method public static Stream zip(Stream first, Stream second) that
 alternates elements from the streams first and second, stopping when one of them
 runs out of elements.
+- [ ] 10. ( Optional ) Online palindrome detection. Read in characters one at a time.
+Report at each instant if the current string is a palindrome. Use the Rabin-Karp
+hashing algorithm.
