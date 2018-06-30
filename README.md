@@ -9,7 +9,7 @@ mathematical (non-negative) remainder. Which of the three gives you the least ha
 with negative values?
 - [x] 2. Implement a bidirectional Rot13 algorithm. Encode/decode a string from
 the command line argument.
-- [ ] 3. Write a program to convert an input hexadecimal string into its equivalent
+- [x] 3. Write a program to convert an input hexadecimal string into its equivalent
 decimal number.
 - [x] 4. Write methods that turn a Scanner into a stream of words, lines, integers, or
 double values.
@@ -33,6 +33,6 @@ and m = 2^48.
 - [x] 9. Write a method public static Stream zip(Stream first, Stream second) that
 alternates elements from the streams first and second, stopping when one of them
 runs out of elements.
-- [ ] 10. ( Optional ) Online palindrome detection. Read in characters one at a time.
+- [x] 10. ( Optional ) Online palindrome detection. Read in characters one at a time.
 Report at each instant if the current string is a palindrome. Use the Rabin-Karp
 hashing algorithm.
